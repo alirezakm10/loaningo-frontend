@@ -21,6 +21,7 @@ module.exports = {
       },
       colors: {
         darkloan: "#000000",
+        dimdarkloan:"#0A0C0E",
         blueloan: "#18BBC0",
         whiteloan: "#FFF",
         dimloan: "#637381",

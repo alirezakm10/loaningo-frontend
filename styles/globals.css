@@ -35,7 +35,20 @@ a {
   @apply h-[45px] px-3 flex items-center border-none justify-center text-sm text-whiteloan bg-blueloan border border-white rounded-[4px]
 }
 
+.under-neon-circle {
+  background: #18bac01f;
+  @apply relative mx-auto flex justify-center items-center h-[112px] w-[112px] rounded-full
+}
 
+.neon-circle {
+  /* border: 10px solid rgb(1, 49, 61); */
+  background: #18BBC0;
+  box-shadow: 0px 4px 31px 8px #18bac080;
+  @apply relative w-[92px] h-[92px] p-[20px] flex justify-center items-center text-3xl font-bold rounded-full;
+}
+.dark-icon-container {
+  background: rgba(118, 255, 247, 0.03);
+}
 .hero-pic{
   background-position: center 50%;
   @apply bg-[url('/hero.jpg')] relative bg-no-repeat bg-cover object-contain
@@ -56,6 +69,18 @@ a {
 
   .earth-pic {
     @apply bg-[url('/earth.svg')] absolute bg-no-repeat bg-right-top w-full h-full
+  }
+  .paper-icon {
+    @apply bg-[url('/icons/paper.svg')] absolute bg-no-repeat bg-right-top w-full h-full
+  }
+  .shield-icon {
+    @apply bg-[url('/icons/shield.svg')] absolute bg-no-repeat bg-right-top w-full h-full
+  }
+  .speed-icon {
+    @apply bg-[url('/icons/speed.svg')] absolute bg-no-repeat bg-right-top w-full h-full
+  }
+  .statistics-icon {
+    @apply bg-[url('/icons/statistics.svg')] absolute bg-no-repeat bg-right-top w-full h-full
   }
 
   .sky-gradient {

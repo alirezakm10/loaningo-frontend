@@ -70,7 +70,6 @@ const Hero = () => {
         <button className="mt-[45px] h-[45px] w-[114px] text-sm border border-white rounded-[4px]" >More about us</button>
         </div>
         <div className=" relative flex-1 w-full justify-center items-center" >
-          <div className="sky-gradient" ></div>
           <img src='/earth.svg' width="100%" height="100%" className="px-6" />
         </div>
       </section>

@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link href='https://dashv1.gotimate.com/signup' >
             <button
               type="button"
-              className="relative z-[1] text-white text-[14px] bg-gotimate w-[100px] h-[40px] hover:bg-gray-400 transition-all  focus:outline-none rounded-[10px]"
+              className="neonBtn"
             >
               Request demo
             </button>

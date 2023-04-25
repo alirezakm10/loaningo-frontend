@@ -1,5 +1,5 @@
 export {default as Navbar} from './Navbar'
 export {default as Hero} from './Hero'
 export {default as Faq} from './Faq'
-export {default as LetsStart} from './LetsStart'
-export {default as BusinessAccount} from './BusinessAccount'
+export {default as Landing} from './Landing'
+export {default as Cta} from './Cta'
