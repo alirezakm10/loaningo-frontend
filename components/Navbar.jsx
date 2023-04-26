@@ -7,8 +7,8 @@ const Navbar = () => {
   const { logo, navbar, socialNetworks } = initialData;
 
   return (
-    <nav className="container bg-darkloan text-whiteloan">
-      <div className="overflow-hidden flex flex-wrap items-center justify-between">
+    <nav className="container text-whiteloan py-4 md:py-0 relative z-[1] ">
+      <div className=" flex flex-wrap items-center justify-between">
         <a href="https://gotimate.com/" className="flex items-center">
           <div className=" relative z-[1] h-auto  hidden lg:flex">
             {logo}
@@ -28,7 +28,7 @@ const Navbar = () => {
           </div>
 
           {/* hamburger menu logo and user icon in mobile mode */}
-          <div className="w-screen bg-transparent flex lg:hidden justify-between">
+          <div className="w-screen  flex lg:hidden justify-between">
           {logo}
             <button
               data-collapse-toggle="navbar-cta"
@@ -91,25 +91,25 @@ const Navbar = () => {
                 <Link href='https://dashv1.gotimate.com/signup' >
                 <button
                   type="button"
-                  className="text-white text-[14px] bg-gotimate w-[100px] h-[40px] hover:bg-gray-400 transition-all  focus:outline-none rounded-[10px]"
+                  className="text-white text-[14px] w-[100px] h-[40px] hover:bg-gray-400 transition-all  focus:outline-none rounded-[10px]"
                 >
                  Request demo
                 </button>
                 </Link>
               </div>
               <div className="flex flex-col items-center gap-3 absolute bottom-[100px] left-0 right-0">
-                <div className="flex gap-3">
-                <Link href={socialNetworks.facebook.href} >
-      {socialNetworks.facebook.icon}
-         </Link>
-         <Link href={socialNetworks.twitter.href} >
-      {socialNetworks.twitter.icon}
-         </Link>
-         <Link href={socialNetworks.linkdin.href} >
-      {socialNetworks.linkdin.icon}
-         </Link>
-                </div>
-                <p className="text-sm">Gotimate on Socials</p>
+              <div className="flex gap-5 items-center">
+            <Link href={socialNetworks.instagram.href}>
+              {socialNetworks.instagram.icon}
+            </Link>
+            <Link href={socialNetworks.youtube.href}>
+              {socialNetworks.youtube.icon}
+            </Link>
+            <Link href={socialNetworks.facebook.href}>
+              {socialNetworks.facebook.icon}
+            </Link>
+          </div>
+                <p className=" ">Gotimate on Socials</p>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ const Navbar = () => {
               <Link
               key={i}
                 href={link.route}
-                className=" relative z-[1] block custom-visited py-2 pl-3 pr-4  hover:text-blueloan rounded md:bg-transparent focus:text-gotimate md:p-0 "
+                className=" relative z-[1] block custom-visited py-2 pl-3 pr-4  hover:text-blueloan rounded focus:text-gotimate md:p-0 "
                 aria-current="page"
               >
                 {link.title}

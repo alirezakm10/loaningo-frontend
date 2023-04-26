@@ -19,6 +19,13 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  @apply text-2xl font-bold my-[20px]
+}
+
+p {
+  @apply leading-8
+}
 
 /* it's for accordions soft open and close animation */
 .accordion_content{
@@ -26,18 +33,25 @@ a {
 }
 
 .baseBtn {
-  @apply h-[45px] px-3 flex items-center justify-center text-sm border border-white rounded-[4px]
+  @apply relative z-[1] h-[45px] px-5 flex items-center justify-center   border border-white rounded-[4px]
+}
+.baseBtn:hover {
+  @apply bg-gray-500 transition-all
 }
 
 .neonBtn {
+  position: relative;
   background: #18BBC0;
   box-shadow: 0px 4px 31px #18bac080;
-  @apply h-[45px] px-3 flex items-center border-none justify-center text-sm text-whiteloan bg-blueloan border border-white rounded-[4px]
+  @apply h-[45px] px-5 flex items-center border-none justify-center   text-whiteloan bg-blueloan border border-white rounded-[4px]
+}
+.neonBtn:hover {
+  @apply bg-dimdarkloan text-whiteloan transition-all
 }
 
 .under-neon-circle {
   background: #18bac01f;
-  @apply relative mx-auto flex justify-center items-center h-[112px] w-[112px] rounded-full
+  @apply relative  mx-auto flex justify-center items-center h-[112px] w-[112px] rounded-full
 }
 
 .neon-circle {
@@ -84,11 +98,21 @@ a {
   }
 
   .sky-gradient {
-    /* Created with https://www.css-gradient.com */
-    @apply absolute  ;
-    height: 100%;
+    position: absolute;
+   height: 100vh;
     width: 100%;
-    background-image: radial-gradient(circle at center, rgba(24, 187, 192, 1), rgba(24, 186, 192, 0.514) 20%, rgba(24, 186, 192, 0) 50%);
+    background-image: radial-gradient(circle at top right, rgba(24, 186, 192, 0.384), rgba(24, 186, 192, 0.116) 20%, rgba(24, 186, 192, 0) 50%);
    
     }
 
+    .base-gradient {
+      height: 200px;
+      background: radial-gradient(ellipse at center, rgba(24, 186, 192, 0.253)0%, rgba(24, 186, 192, 0.123) 20%, rgba(24, 186, 192, 0.068) 50%, rgba(24, 186, 192, 0) 70%);
+      }
+
+
+      .card-hover:hover {
+        cursor: pointer;
+        box-shadow: 0px 4px 31px #18bac080;
+        @apply transition-all duration-300
+      }

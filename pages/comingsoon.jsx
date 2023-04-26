@@ -12,7 +12,7 @@ const comingsoon = () => {
 </svg>
 
   <h1 className="text-3xl text-dimgot" >Coming Soon !</h1>
-  <p className="text-sm text-dimgot py-3" >We will come back soon</p>
+  <p className="  text-dimgot py-3" >We will come back soon</p>
       </section>
     )
   }

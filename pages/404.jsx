@@ -16,7 +16,7 @@ const index = () => {
 <path d="M123.92 100.05C126.326 100.05 128.276 98.1025 128.276 95.7001C128.276 93.2977 126.326 91.3501 123.92 91.3501C121.514 91.3501 119.564 93.2977 119.564 95.7001C119.564 98.1025 121.514 100.05 123.92 100.05Z" fill="#05697E"/>
 </svg>
 <h1 className="text-3xl text-dimgot" >Nothing here ..!</h1>
-<p className="text-sm text-dimgot py-3" >This page isn't available.</p>
+<p className="  text-dimgot py-3" >This page isn't available.</p>
     </section>
   )
 }

@@ -8,19 +8,18 @@ const Hero = () => {
 
   
   return (
-    <div className="flex flex-col w-full">  
+    <div className="flex flex-col w-full relative overflow-hidden">  
        {/* place of dotted illustration */}
 
-       {/* <div className="absolute top-0 right-[-55px] w-full h-screen bg-gradient-to-bl from-cyan-500 to-black from-1% to-40%" ></div> */}
        <div className="hero-illustration" ></div>
   
 
       <div className="container mx-auto" >
-      <section className="flex flex-col justify-center items-center gap-5 relative text-whiteloan h-[500px] ">      
-      <h1 className="text-5xl font-bold ">
+      <section className="flex flex-col justify-center items-center gap-5 relative text-whiteloan py-[100px]">      
+      <h1 className="text-4xl font-bold my-0 ">
       {hero.title}
       </h1>
-      <h1 className="text-5xl font-bold ">
+      <h1 className="text-3xl font-bold my-0 ">
       {hero.breaktitle}
       </h1>
         <p className="text-gray-500 text-center py-4 lg:w-1/2">
@@ -66,10 +65,10 @@ const Hero = () => {
         <div className="flex flex-col justify-center flex-1" >
         <p className="text-blueloan" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <h1 className=" text-3xl md:text-[80px] my-2 md:my-8" >About us</h1>
-        <p className="text-sm my-2" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button className="mt-[45px] h-[45px] w-[114px] text-sm border border-white rounded-[4px]" >More about us</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button className="mt-[45px] mx-auto md:mx-0  w-[178px] baseBtn" >More about us</button>
         </div>
-        <div className=" relative flex-1 w-full justify-center items-center" >
+        <div className=" relative flex-1 w-full justify-center items-center">
           <img src='/earth.svg' width="100%" height="100%" className="px-6" />
         </div>
       </section>
