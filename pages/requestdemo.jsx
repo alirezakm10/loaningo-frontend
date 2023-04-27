@@ -5,7 +5,7 @@ import Link from 'next/link'
 const requestdemo = () => {
   return (
 
-      <section className=" container mx-auto flex flex-col gap-9 justify-center items-center md:flex-row text-whiteloan my-9 h-screen">
+      <section className=" container mx-auto flex flex-col gap-9 justify-center items-center md:flex-row text-whiteloan  h-screen">
         <div className="flex flex-col gap-2 px-6 flex-1">
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
