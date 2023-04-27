@@ -8,9 +8,9 @@ const contactus = () => {
         <nav className="flex justify-center" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blueloan dark:text-gray-400 dark:hover:text-white"
               >
                 <svg
                   width="15"
@@ -51,7 +51,7 @@ const contactus = () => {
                   </g>
                 </svg>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <div className="flex items-center">
@@ -70,7 +70,7 @@ const contactus = () => {
                 </svg>
                 <a
                   href="#"
-                  className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                  className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                 >
                   contact
                 </a>
@@ -78,13 +78,13 @@ const contactus = () => {
             </li>
           </ol>
         </nav>
-        <h1 className="text-3xl font-bold">Contact Us</h1>
+        <h1 className="text-[52px]">Contact Us</h1>
       </section>
 
       {/* contact form */}
       {/* full width card one */}
-      <section className=" container mx-auto flex flex-col md:flex-row text-whiteloan my-[100px] ">
-        <div className="flex flex-col justify-center w-full md:w-1/2">
+      <section className=" container md:w-[80%] mx-auto flex flex-col md:flex-row text-whiteloan my-[100px] ">
+        <div className="flex flex-col justify-center w-full">
           <form className="flex flex-col gap-3">
             <div className="flex flex-col items-start">
               <p className="text-sm py-3">
@@ -151,7 +151,7 @@ const contactus = () => {
           <h1 className=" text-2xl text-whiteloan font-bold">Contact Us</h1>
           <div className="mb-6">
             <p>Email</p>
-            <a href="mailto:info@loaningo.com">info@loaningo.com</a>
+            <a href="mailto:info@loaningo.com"> info [at] loaningo.com</a>
           </div>
           <div>
             <p>Phone</p>

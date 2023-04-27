@@ -10,7 +10,7 @@ const Layout = ({children}) => {
   return (
     <>
     <div className="sky-gradient" ></div>
-    <main className='relative z-[1] overflow-hidden flex flex-col items-center py-4' >
+    <main className='relative z-[1] overflow-hidden flex flex-col items-center pt-4' >
 
 <Navbar />
     {children}

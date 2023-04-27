@@ -15,22 +15,22 @@ const Landing = () => {
           </p>
         </div>
         {/* card container */}
-        <div className="flex flex-col md:flex-row gap-[40px]">
-          <div>
+        <div className="flex flex-col md:flex-row gap-[70px]">
+          <div className='flex-1' >
             <h1 >Ut enim ad minim</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod .
             </p>
           </div>
-          <div>
+          <div className='flex-1'>
             <h1>Duis aute irure</h1>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sit
               vitae, nemo amet enim et quibusdam temporibus. Odio, nisi velit.
             </p>
           </div>
-          <div>
+          <div className='flex-1'>
             <h1>Voluptate in this</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do .
@@ -70,32 +70,32 @@ const Landing = () => {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row gap-[40px]">
-            <div className="flex flex-col gap-6 relative md:top-[30px]">
+          <div className="flex flex-col md:flex-row gap-[60px]">
+            <div className="flex flex-col gap-6 relative md:top-[30px] flex-1">
               <div className="under-neon-circle">
                 <span className="neon-circle">01</span>
               </div>
-              <h1>Ut enim ad minim</h1>
+              <h1 className="my-0">Ut enim ad minim</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod .
               </p>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 flex-1">
               <div className="under-neon-circle">
                 <span className="neon-circle">02</span>
               </div>
-              <h1>Duis aute irure</h1>
+              <h1 className="my-0">Duis aute irure</h1>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sit
                 vitae, nemo amet enim et quibusdam temporibus. Odio, nisi velit.
               </p>
             </div>
-            <div className="flex flex-col gap-6 relative md:top-[30px]">
+            <div className="flex flex-col gap-6 relative md:top-[30px] flex-1">
               <div className="under-neon-circle">
                 <span className="neon-circle">01</span>
               </div>
-              <h1>Voluptate in this</h1>
+              <h1 className="my-0">Voluptate in this</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 .
@@ -193,7 +193,7 @@ const Landing = () => {
             </div>
         </div>
 
-        <button className="mt-[45px] h-[45px] px-5   border border-white rounded-[4px] mx-auto" >Services Page</button>
+        <button className=" baseBtn mt-[45px] h-[45px] px-5   border border-white rounded-[4px] mx-auto" >Services Page</button>
         </section>
       {/* Service summary end */}
 

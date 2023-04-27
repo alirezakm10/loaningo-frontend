@@ -9,12 +9,12 @@ const manrope = Manrope({ subsets: ['latin'],weight:['300','500','700'] })
 
 export default function App({ Component, pageProps }) {
   return (
-    <I18nextProvider i18n={i18n} >
     <div className={manrope.className}>
+      <I18nextProvider i18n={i18n} >
     <Layout>
       <Component {...pageProps} />
     </Layout>
-    </div>
     </I18nextProvider>
+    </div>
   );
 }

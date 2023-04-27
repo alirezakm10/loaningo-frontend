@@ -13,32 +13,29 @@ const Footer = () => {
           <h1 className=" text-2xl font-bold">Contact Us</h1>
           <section className="flex gap-6 justify-between" >
           <div className="  flex flex-col leading-8">
-              <Link
-                href='/'
+              <p
                 className="hover:text-blueloan cursor-pointer"
               >
                Email
-              </Link>
-              <Link
-                href='/'
+              </p>
+              <a
+              href="mailto:info@loaningo.com"
                 className="hover:text-blueloan cursor-pointer"
               >
-               info@loaningo.com
-              </Link>
+               info [at] loaningo.com
+              </a>
           </div>
           <div className="  flex flex-col leading-8">
-              <Link
-                href='/'
+              <p
                 className="hover:text-blueloan cursor-pointer"
               >
                Phone
-              </Link>
-              <Link
-                href='/'
+              </p>
+              <p
                 className="hover:text-blueloan cursor-pointer"
               >
                (+21)12345678569
-              </Link>
+              </p>
           </div>
           </section>
         </div>
@@ -71,7 +68,7 @@ const Footer = () => {
                Home
               </Link>
               <Link
-                href='/'
+                href='/faq'
                 className="hover:text-blueloan cursor-pointer"
               >
                FAQ
@@ -79,16 +76,16 @@ const Footer = () => {
           </div>
           <div className="  flex flex-col leading-8">
               <Link
-                href='/'
+                href='/aboutus'
                 className="hover:text-blueloan cursor-pointer"
               >
-               FAQs
+               About Us
               </Link>
               <Link
-                href='/'
+                href='/services'
                 className="hover:text-blueloan cursor-pointer"
               >
-               Privacy Policy
+               Services
               </Link>
           </div>
           </section>

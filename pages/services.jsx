@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link'
 
 const services = () => {
   return (
@@ -8,9 +9,9 @@ const services = () => {
         <nav className="flex justify-center" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blueloan dark:text-gray-400 dark:hover:text-white"
               >
                 <svg
                   width="15"
@@ -51,7 +52,7 @@ const services = () => {
                   </g>
                 </svg>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <div className="flex items-center">
@@ -70,7 +71,7 @@ const services = () => {
                 </svg>
                 <a
                   href="#"
-                  className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                  className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                 >
                   Services
                 </a>
@@ -115,18 +116,38 @@ const services = () => {
       </div>
 
 {/* full width card one */}
-      <section className=" container mx-auto flex flex-col md:flex-row text-whiteloan my-[100px] ">
+      <section className=" container mx-auto flex flex-col-reverse md:flex-row text-whiteloan my-[50px] ">
         <div className="flex flex-col justify-center flex-1">
           <h1 className="text-3xl">Loan</h1>
-          <p>
+          <p className="text-sm" >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <button className="mt-[45px] mb-[100px] mx-auto md:mx-0  w-[178px] baseBtn ">
+          <Link href='/requestdemo' >
+          <button
+            type="button"
+            className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
+          >
             More about us
+            <svg
+              width="7"
+              height="11"
+              viewBox="0 0 7 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.625 1.125L6 5.5L1.625 9.875"
+                stroke="inherit"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
+          </Link>
         </div>
         <div className=" relative flex-1 w-full justify-center items-center">
           <img src="/ethereum.svg" width="100%" height="100%" className="px-6" />
@@ -135,18 +156,38 @@ const services = () => {
 
 
       {/* full width card two */}
-      <section className=" container mx-auto flex flex-col md:flex-row text-whiteloan my-[100px]">
+      <section className=" container mx-auto flex flex-col-reverse md:flex-row text-whiteloan my-[50px]">
         <div className="flex flex-col justify-center flex-1">
           <h1 className="text-3xl">Stake</h1>
-          <p>
+          <p className="text-sm" >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <button className="mt-[45px] mb-[100px] mx-auto md:mx-0  w-[178px] baseBtn ">
+          <Link href='/requestdemo' >
+          <button
+            type="button"
+            className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[100px] hover:text-blueloan hover:stroke-blueloan "
+          >
             More about us
+            <svg
+              width="7"
+              height="11"
+              viewBox="0 0 7 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.625 1.125L6 5.5L1.625 9.875"
+                stroke="inherit"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
+          </Link>
         </div>
         <div className=" relative flex-1 w-full justify-center items-center">
           <img src="/stake-box.svg" width="100%" height="100%" className="px-6" />

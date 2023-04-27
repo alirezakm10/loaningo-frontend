@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AccordionItem from "./AccordionItem";
 import { initialData } from "@/initialData";
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+
 
 const Faq = () => {
   const router = useRouter()
@@ -27,7 +29,7 @@ const Faq = () => {
       <nav className="flex justify-center mb-[50px]" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
-          <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blueloan dark:text-gray-400 dark:hover:text-white">
           <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fillRule="evenodd" clipRule="evenodd" d="M7.20833 6.08301C6.40417 6.08301 5.75 6.73717 5.75 7.54217C5.75 8.34634 6.40417 8.99968 7.20833 8.99968C8.0125 8.99968 8.66667 8.34634 8.66667 7.54217C8.66667 6.73717 8.0125 6.08301 7.20833 6.08301ZM7.20833 10.2497C5.715 10.2497 4.5 9.03551 4.5 7.54217C4.5 6.04801 5.715 4.83301 7.20833 4.83301C8.70167 4.83301 9.91667 6.04801 9.91667 7.54217C9.91667 9.03551 8.70167 10.2497 7.20833 10.2497Z" fill="#BDBDBD"/>
 <mask id="mask0_93_4199" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="17">
@@ -38,12 +40,12 @@ const Faq = () => {
 </g>
 </svg>
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <div className="flex items-center">
             <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-            <a href="#" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">FAQ</a>
+            <a href="#" className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white">FAQ</a>
           </div>
         </li>
         {/* <li aria-current="page">
@@ -58,7 +60,7 @@ const Faq = () => {
       <section className="flex flex-col h-auto gap-2 relative overflow-hidden items-center">
         {/* start of faq details */}
         <div className="flex flex-col items-center mb-[60px]">
-          <h1 className="text-6xl font-bold">{faq.title}</h1>
+          <h1 className="text-[52px]">{faq.title}</h1>
           <p className="text-gray-500 pt-8 pb-4 text-center leading-8">
             {faq.content}
           </p>
@@ -172,10 +174,16 @@ const Faq = () => {
           })}
         </div>
         {/* end of accordions container */}
+        { !faqPage && 
+        <>
         <p className="text-lg">Don’t find your answer ?</p>
-        <button className="mt-[25px] h-[45px] px-3   border border-white rounded-[4px] mx-auto">
+        <Link href='/faq' >
+       <button className=" baseBtn mt-[25px] h-[45px] px-3   border border-white rounded-[4px] mx-auto">
           See All Questions
         </button>
+        </Link>
+        </>
+        }
       </section>
     </section>
   );

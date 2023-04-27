@@ -1,18 +1,18 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Link from 'next/link'
 
 const requestdemo = () => {
   return (
-    <section className="flex flex-col text-whiteloan h-auto">
-      {/* full width card one */}
-      <section className=" container mx-auto flex flex-col md:flex-row text-whiteloan my-9">
-        <div className="flex flex-col justify-center px-6 flex-1">
+
+      <section className=" container mx-auto flex flex-col gap-9 justify-center items-center md:flex-row text-whiteloan my-9 h-auto">
+        <div className="flex flex-col gap-2 px-6 flex-1">
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
               <li className="inline-flex items-center">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blueloan dark:text-gray-400 dark:hover:text-white"
                 >
                   <svg
                     width="15"
@@ -53,7 +53,7 @@ const requestdemo = () => {
                     </g>
                   </svg>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <div className="flex items-center">
@@ -72,7 +72,7 @@ const requestdemo = () => {
                   </svg>
                   <a
                     href="#"
-                    className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                    className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                   >
                     Request demo
                   </a>
@@ -88,13 +88,61 @@ const requestdemo = () => {
             Paperform might be a perfect solution. Want to know why? Check out
             the form template
           </p>
+          <div className="flex gap-7" >
+          <Link href='/aboutus' >
+          <button
+            type="button"
+            className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
+          >
+            Learn More
+            <svg
+              width="7"
+              height="11"
+              viewBox="0 0 7 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.625 1.125L6 5.5L1.625 9.875"
+                stroke="inherit"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          </Link>
+          <Link href='/services' >
+          <button
+            type="button"
+            className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
+          >
+            Our Services
+            <svg
+              width="7"
+              height="11"
+              viewBox="0 0 7 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.625 1.125L6 5.5L1.625 9.875"
+                stroke="inherit"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          </Link>
+          </div>
         </div>
 
         {/* form */}
         <div className=" relative flex-1 w-full justify-center items-center">
-          <form className="flex flex-col gap-3">
+          <form className="flex flex-col gap-3 ">
             <div className="flex flex-col items-start">
-              <p className="text-sm py-3">
+              <p className="text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing .
               </p>
             </div>
@@ -116,12 +164,12 @@ const requestdemo = () => {
               placeholder="Your Name"
             />
 
-<div className="flex gap-2" >
-<input
-              id="firstname"
-              type="firstname"
-              name="firstname"
-              className={`text-[14px] placeholder-gray-500
+            <div className="flex gap-2">
+              <input
+                id="firstname"
+                type="firstname"
+                name="firstname"
+                className={`text-[14px] placeholder-gray-500
               bg-middarkloan
                     pl-3
                     rounded-[6px]
@@ -132,12 +180,13 @@ const requestdemo = () => {
                     focus:outline-none focus:border-blueloan
                     card-hover
                   `}
-              placeholder="First Name"
-            />  <input
-            id="lastname"
-            type="lastname"
-            name="lastname"
-            className={`text-[14px] placeholder-gray-500
+                placeholder="First Name"
+              />{" "}
+              <input
+                id="lastname"
+                type="lastname"
+                name="lastname"
+                className={`text-[14px] placeholder-gray-500
             bg-middarkloan
                   pl-3
                   rounded-[6px]
@@ -148,9 +197,9 @@ const requestdemo = () => {
                   focus:outline-none focus:border-blueloan
                   card-hover
                 `}
-            placeholder="Last Name"
-          />
-</div>
+                placeholder="Last Name"
+              />
+            </div>
 
             <input
               id="occupation"
@@ -170,18 +219,16 @@ const requestdemo = () => {
               placeholder="Occupation"
             />
 
-{/* lets create temrs and service */}
-<div className="flex gap-2 px-1" >
-  <input 
-  type="checkbox"
-  name="terms"
-  value="checked"
-  className="accent-black"
-  />
-  <p>I agree with terms & condition</p>
-</div>
-
-
+            {/* lets create temrs and service */}
+            <div className="flex gap-2 px-1">
+              <input
+                type="checkbox"
+                name="terms"
+                value="checked"
+                className="accent-black"
+              />
+              <p>I agree with terms & condition</p>
+            </div>
 
             <button type="submit" className="neonBtn w-[162px] mx-auto">
               Submit Form
@@ -189,7 +236,7 @@ const requestdemo = () => {
           </form>
         </div>
       </section>
-    </section>
+
   );
 };
 

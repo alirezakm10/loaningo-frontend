@@ -9,9 +9,9 @@ const Navbar = () => {
   return (
     <nav className="container text-whiteloan py-4 md:py-0 relative z-[1] ">
       <div className=" flex flex-wrap items-center justify-between">
-        <a href="https://gotimate.com/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <div className=" relative z-[1] h-auto  hidden lg:flex">{logo}</div>
-        </a>
+        </Link>
         <div className="md:order-2">
           {/* this button is for desktop */}
           <div className="hidden lg:flex">

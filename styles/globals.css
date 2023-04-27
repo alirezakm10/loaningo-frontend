@@ -19,8 +19,9 @@ a {
   text-decoration: none;
 }
 
+
 h1 {
-  @apply text-2xl font-bold my-[20px]
+  @apply text-2xl my-[20px]
 }
 
 p {
@@ -46,7 +47,8 @@ p {
   @apply h-[45px] px-5 flex items-center border-none justify-center   text-whiteloan bg-blueloan border border-white rounded-[4px]
 }
 .neonBtn:hover {
-  @apply bg-dimdarkloan text-whiteloan transition-all
+  background: #18BBC0;
+  box-shadow: none;
 }
 
 .under-neon-circle {
@@ -106,8 +108,8 @@ p {
    height: 100vh;
     width: 100%;
     background-image: radial-gradient(circle at top right, rgba(24, 186, 192, 0.384), rgba(24, 186, 192, 0.116) 20%, rgba(24, 186, 192, 0) 50%);
-   
     }
+    
 
     .base-gradient {
       height: 200px;

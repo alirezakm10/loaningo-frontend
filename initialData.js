@@ -31,8 +31,15 @@ navbar : {
     {
       title:'Home',
       route:'/'
-    }
-    ,
+    },
+    {
+        title:'Services',
+        route:'/services'
+      }
+    ,{
+        title:'Contact Us',
+        route:'/contactus'
+    },
     {
       title:'About us',
       route:'/aboutus'
@@ -43,10 +50,7 @@ navbar : {
       route:'/faq'
     }
     ,
-    {
-      title:'Services',
-      route:'/services'
-    }
+   
 
   ]
 },

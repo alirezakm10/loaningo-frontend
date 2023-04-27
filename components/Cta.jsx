@@ -19,7 +19,7 @@ const Cta = () => {
         </div>
         <div className='flex justify-center flex-1' >
         <div className="flex gap-7">
-          <Link href='/' >
+          <Link href='/requestdemo' >
           <button
             type="button"
             className="neonBtn"
@@ -27,7 +27,7 @@ const Cta = () => {
             Request a demo
           </button>
           </Link>
-          <Link href='/' >
+          <Link href='/aboutus' >
           <button
             type="button"
             className="baseBtn"

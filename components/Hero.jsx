@@ -16,10 +16,10 @@ const Hero = () => {
 
       <div className="container mx-auto" >
       <section className="flex flex-col justify-center items-center gap-5 relative text-whiteloan py-[100px]">      
-      <h1 className="text-4xl font-bold my-0 ">
+      <h1 className="text-4xl md:text-[52px] font-bold my-0 ">
       {hero.title}
       </h1>
-      <h1 className="text-3xl font-bold my-0 ">
+      <h1 className="text-3xl md:text-[48px] font-bold my-0 ">
       {hero.breaktitle}
       </h1>
         <p className="text-gray-500 text-center py-4 lg:w-1/2">
@@ -34,7 +34,7 @@ const Hero = () => {
             {hero.buttons[0].title}
           </button>
           </Link>
-          <Link href={hero.buttons[1].url} >
+          <Link href='/aboutus' >
           <button
             type="button"
             className="baseBtn"
@@ -64,7 +64,7 @@ const Hero = () => {
       <section className="flex flex-col md:flex-row text-whiteloan ">
         <div className="flex flex-col justify-center flex-1" >
         <p className="text-blueloan" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-        <h1 className=" text-3xl md:text-[80px] my-2 md:my-8" >About us</h1>
+        <h1 className=" text-3xl md:text-[52px] my-2 md:my-8" >About us</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <button className="mt-[45px] mx-auto md:mx-0  w-[178px] baseBtn" >More about us</button>
         </div>
