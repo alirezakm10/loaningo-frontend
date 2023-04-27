@@ -22,7 +22,7 @@ const Faq = () => {
   },[])
 
   return (
-    <section className={`relative container  text-whiteloan ${faqPage ? 'mt-[20px]':'my-[100px] py-4'} z-[1]`}>
+    <section className={`relative container  text-whiteloan ${faqPage ? 'mt-[20px]':'my-[100px] py-4'}`}>
       { faqPage && 
       <nav className="flex justify-center mb-[50px]" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">

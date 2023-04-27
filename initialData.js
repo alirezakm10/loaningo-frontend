@@ -58,7 +58,7 @@ navbar : {
         buttons:[{
             title:'Request a demo',
             icon:null,
-            url:'/contact'
+            url:'/requestdemo'
         },{
             title:'Learn About',
             icon: null,

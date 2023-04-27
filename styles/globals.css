@@ -33,7 +33,7 @@ p {
 }
 
 .baseBtn {
-  @apply relative z-[1] h-[45px] px-5 flex items-center justify-center   border border-white rounded-[4px]
+  @apply relative  h-[45px] px-5 flex items-center justify-center   border border-white rounded-[4px]
 }
 .baseBtn:hover {
   @apply bg-gray-500 transition-all
