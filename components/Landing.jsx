@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import Link from 'next/link'
 const Landing = () => {
   return (
     <section className="flex flex-col items-center text-[14px]">
@@ -192,8 +192,9 @@ const Landing = () => {
             </div>
             </div>
         </div>
-
+    <Link href='/services' >
         <button className=" baseBtn mt-[45px] h-[45px] px-5   border border-white rounded-[4px] mx-auto" >Services Page</button>
+    </Link>
         </section>
       {/* Service summary end */}
 
