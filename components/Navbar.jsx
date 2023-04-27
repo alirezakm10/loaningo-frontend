@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="md:order-2">
           {/* this button is for desktop */}
           <div className="hidden lg:flex">
-            <Link href='https://dashv1.gotimate.com/signup' >
+            <Link href='/requestdemo' >
             <button
               type="button"
               className="neonBtn"
@@ -88,7 +88,7 @@ const Navbar = () => {
               </ul>
                  {/* login signup buttons in mobile menu */}
                  <div className="gap-2 flex mx-auto">
-                <Link href='https://dashv1.gotimate.com/signup' >
+                <Link href='/requestdemo' >
                 <button
                   type="button"
                   className="text-white text-[14px] w-[100px] h-[40px] hover:bg-gray-400 transition-all  focus:outline-none rounded-[10px]"

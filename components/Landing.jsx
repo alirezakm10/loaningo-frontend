@@ -5,8 +5,8 @@ const Landing = () => {
     <section className="flex flex-col items-center text-[14px]">
       {/* mission Segment start */}
       <section className=" container flex flex-col text-center text-whiteloan my-[60px]">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-3xl text-whiteloan font-bold">
+        <div className="flex flex-col gap-4 mb-[100px]">
+          <h1 className="text-3xl font-bold">
             Mission Statement
           </h1>
           <p>
@@ -56,8 +56,8 @@ const Landing = () => {
               opacity="0.3"
               d="M-23 134C711.463 -42.1906 1141.64 -41.809 1943 134"
               stroke="#E9EBEC"
-              stroke-width="3"
-              stroke-dasharray="8 13"
+              strokeWidth="3"
+              strokeDasharray="8 13"
             />
           </svg>
         </section>
@@ -131,7 +131,7 @@ const Landing = () => {
           {/* card end */}
           <section className="flex items-center gap-7  w-[90%] md:w-[60%]">
             <i className="flex justify-center items-center bg-dimdarkloan rounded-full w-[50px] h-[50px] dark-icon-container " >
-                <Image src='/icons/speed.svg' responsive width='30' height='30'  />
+                <Image src='/icons/speed.svg' responsive='true' width='30' height='30'  />
             </i>
             <div className="flex flex-col" >
                 <h1 className="text-lg my-0">Instant service</h1>
@@ -140,7 +140,7 @@ const Landing = () => {
           </section>
           <section className="flex gap-7 items-center w-[90%] md:w-[60%]">
             <i className="flex justify-center items-center bg-dimdarkloan rounded-full w-[50px] h-[50px] dark-icon-container " >
-            <Image src='/icons/statistics.svg' responsive width='30' height='30'  />
+            <Image src='/icons/statistics.svg' responsive='true' width='30' height='30'  />
             </i>
             <div className="flex flex-col" >
                 <h1 className="text-lg my-0">Flexibility</h1>
@@ -149,7 +149,7 @@ const Landing = () => {
           </section>
           <section className="flex gap-7 items-center w-[90%] md:w-[60%]">
             <i className="flex justify-center items-center bg-dimdarkloan rounded-full w-[50px] h-[50px] dark-icon-container " >
-            <Image src='/icons/paper.svg' responsive width='30' height='30'  />
+            <Image src='/icons/paper.svg' responsive='true' width='30' height='30'  />
             </i>
             <div className="flex flex-col" >
                 <h1 className="text-lg my-0">Asset security</h1>

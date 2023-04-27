@@ -484,18 +484,18 @@
 <path d="M870.383 309.271C870.741 308.997 870.786 308.449 870.517 308.084C870.248 307.718 869.71 307.673 869.351 307.947C868.992 308.221 868.948 308.769 869.217 309.134C869.531 309.5 870.024 309.545 870.383 309.271Z" fill="white"/>
 </g>
 <defs>
-<filter id="filter0_f_1_7306" x="70" y="0" width="909" height="910" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_f_1_7306" x="70" y="0" width="909" height="910" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood  floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="65" result="effect1_foregroundBlur_1_7306"/>
 </filter>
-<filter id="filter1_f_1_7306" x="123" y="59" width="808" height="808" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter1_f_1_7306" x="123" y="59" width="808" height="808" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood  floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_1_7306"/>
 </filter>
-<filter id="filter2_f_1_7306" x="184" y="139" width="648" height="648" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter2_f_1_7306" x="184" y="139" width="648" height="648" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood  floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="71.5" result="effect1_foregroundBlur_1_7306"/>
 </filter>

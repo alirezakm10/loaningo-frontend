@@ -81,6 +81,10 @@ p {
     @apply bg-[url('/partiallines.svg')] absolute bg-no-repeat bg-right-top top-[300px] w-full h-full
   }
 
+  .roadmapD-illustration {
+    @apply bg-[url('/roadmap-desktop.svg')] relative bg-no-repeat  w-full h-full
+  }
+
   .earth-pic {
     @apply bg-[url('/earth.svg')] absolute bg-no-repeat bg-right-top w-full h-full
   }
@@ -116,3 +120,11 @@ p {
         box-shadow: 0px 4px 31px #18bac080;
         @apply transition-all duration-300
       }
+
+      .blured-headpage {
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.5);
+        @apply w-screen flex flex-col items-center justify-center py-4
+      }
+
+  

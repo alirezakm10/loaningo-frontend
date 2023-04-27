@@ -60,7 +60,7 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* cards container */}
+      {/* second section of hero header */}
       <section className="flex flex-col md:flex-row text-whiteloan ">
         <div className="flex flex-col justify-center flex-1" >
         <p className="text-blueloan" >Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>

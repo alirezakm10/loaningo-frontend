@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Cta = () => {
   return (
-<section className='flex w-full bg-dimdarkloan py-[80px] md:py-9 ' >
+<section className='flex w-full bg-dimdarkloan py-[80px] md:py-9 mt-9 ' >
 <section className='container mx-auto flex flex-col md:flex-row gap-9 items-center justify-center text-whiteloan' >
         <div className="flex flex-1 flex-col justify-center">
        <div className='flex items-center gap-5'>
