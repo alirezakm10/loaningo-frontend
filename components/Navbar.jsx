@@ -78,6 +78,7 @@ const Navbar = () => {
               <ul className="MENU-LINK-MOBILE-OPEN text-lg font-light flex flex-col gap-8 items-center justify-around min-h-[250px] mt-[100px] w-full">
                 {navbar.links.map((link, i) => (
                   <Link
+                  onClick={() => setIsNavOpen(false)}
                     key={i}
                     href={link.route}
                     className="hover:text-blueloan"

@@ -5,7 +5,7 @@ import { initialData } from "@/initialData";
 const Footer = () => {
   const { logo, footer, socialNetworks } = initialData;
   return (
-    <section className="w-full bg-middarkloan" >
+    <section className="w-full bg-middarkloan">
       <section className="container mx-auto relative overflow-hiddenflex flex-col items-center text-whiteloan">
       <section className="flex flex-col-reverse  items-center md:flex-row py-[100px] md:py-9 gap-3 md:gap-[100px]">
         {/* section one */}

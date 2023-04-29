@@ -1,11 +1,35 @@
+import { useState, useEffect } from 'react'
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Link from 'next/link'
+import useAxios from "@/hooks/useAxios";
+
 
 const requestdemo = () => {
+  const {data, isLoading, isError, postData} = useAxios()
+  const formik = useFormik({
+    initialValues: {
+      email:"",
+      first_name:"",
+      last_name:"",
+      occupation:"",
+       terms: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email address.').required('Emaill is required.'),
+      first_name: Yup.string().required('First name is required'),
+      last_name: Yup.string().required('Last name is required'),
+      occupation: Yup.string().required('occupation name is required'),
+      terms: Yup.array().required("Terms of service must be checked! "),
+    }),
+    onSubmit: (values) => {
+      console.log('this is url from requestdemo: ', process.env.requestdemo)
+      postData(process.env.requestdemo,values)
+    }
+  })
   return (
 
-      <section className=" container mx-auto flex flex-col gap-9 justify-center items-center md:flex-row text-whiteloan  h-screen">
+      <section className=" container mx-auto py-[100px] flex flex-col gap-9 justify-center items-center md:flex-row text-whiteloan">
         <div className="flex flex-col gap-2 px-6 flex-1">
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
@@ -91,8 +115,8 @@ const requestdemo = () => {
           <div className="flex gap-7" >
           <Link href='/aboutus' >
           <button
-            type="button"
-            className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
+            type="submit"
+            className="border-none cursor-pointer stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
           >
             Learn More
             <svg
@@ -140,16 +164,16 @@ const requestdemo = () => {
 
         {/* form */}
         <div className=" relative flex-1 w-full justify-center items-center">
-          <form className="flex flex-col gap-3 ">
+          <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 ">
             <div className="flex flex-col items-start">
               <p className="text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing .
               </p>
             </div>
             <input
-              id="name"
-              type="name"
-              name="name"
+              id="email"
+              type="email"
+              name="email"
               className={`text-[14px] placeholder-gray-500
               bg-middarkloan
                 pl-3
@@ -160,15 +184,19 @@ const requestdemo = () => {
                     py-2
                     focus:outline-none focus:border-blueloan
                     card-hover
+                    ${formik.touched.email && formik.errors.email && 'border-red-500'}
                   `}
-              placeholder="Your Name"
+              placeholder="Email Address"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
 
             <div className="flex gap-2">
               <input
-                id="firstname"
-                type="firstname"
-                name="firstname"
+                id="first_name"
+                type="text"
+                name="first_name"
                 className={`text-[14px] placeholder-gray-500
               bg-middarkloan
                     pl-3
@@ -179,13 +207,17 @@ const requestdemo = () => {
                     py-2
                     focus:outline-none focus:border-blueloan
                     card-hover
+                    ${formik.touched.first_name && formik.errors.first_name && 'border-red-500'}
                   `}
                 placeholder="First Name"
-              />{" "}
+                value={formik.values.first_name}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
               <input
-                id="lastname"
-                type="lastname"
-                name="lastname"
+                id="last_name"
+                type="text"
+                name="last_name"
                 className={`text-[14px] placeholder-gray-500
             bg-middarkloan
                   pl-3
@@ -196,14 +228,18 @@ const requestdemo = () => {
                   py-2
                   focus:outline-none focus:border-blueloan
                   card-hover
+                  ${formik.touched.last_name && formik.errors.last_name && 'border-red-500'}
                 `}
                 placeholder="Last Name"
+                value={formik.values.last_name}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
             </div>
 
             <input
               id="occupation"
-              type="occupation"
+              type="text"
               name="occupation"
               className={`text-[14px] placeholder-gray-500
               bg-middarkloan
@@ -215,8 +251,12 @@ const requestdemo = () => {
                     py-2
                     focus:outline-none focus:border-blueloan
                     card-hover
+                    ${formik.touched.occupation && formik.errors.occupation && 'border-red-500'}
                   `}
               placeholder="Occupation"
+              value={formik.values.occupation}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
 
             {/* lets create temrs and service */}
@@ -226,8 +266,10 @@ const requestdemo = () => {
                 name="terms"
                 value="checked"
                 className="accent-black"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
-              <p>I agree with terms & condition</p>
+              <p className={`${formik.touched.terms && formik.errors.terms && 'text-red-500'}`}>I agree with terms & condition</p>
             </div>
 
             <button type="submit" className="neonBtn w-[162px] mx-auto">
