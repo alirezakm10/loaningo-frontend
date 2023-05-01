@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useTranslation } from 'react-i18next'
 
 const about = () => {
+  const { t } = useTranslation()
+  
   return (
     <section className="flex flex-col text-whiteloan h-auto">
       {/* this is blured header container */}
@@ -50,7 +53,7 @@ const about = () => {
                     />
                   </g>
                 </svg>
-                Home
+                {t('home')}
               </Link>
             </li>
             <li>
@@ -68,17 +71,16 @@ const about = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <a
-                  href="#"
+                <p
                   className="ml-1 text=sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                 >
-                  About Us
-                </a>
+                 {t('auTitleP')}
+                </p>
               </div>
             </li>
           </ol>
         </nav>
-        <h1 className="text-[52px]">About us</h1>
+        <h1 className="text-[52px]">{t('auTitleP')}</h1>
       </section>
 
       {/* full width card one */}
@@ -88,25 +90,15 @@ const about = () => {
         </div>
         <div className="flex flex-col justify-center px-6 flex-1">
           <section>
-            <h1 className="text-2xl">About Loaningo</h1>
+            <h1 className="text-2xl">{t('auHead1P')}</h1>
             <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              {t('auContent1P')}
             </p>
           </section>
           <section>
-            <h1 className="text-2xl">Our Journey</h1>
+            <h1 className="text-2xl">{t('auHead2P')}</h1>
             <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {t('auContent2P')}
             </p>
           </section>
         </div>

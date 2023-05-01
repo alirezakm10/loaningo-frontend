@@ -1,6 +1,30 @@
 import Link from "next/link";
+import { useAxios } from '@/hooks/useAxios'
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useTranslation } from 'react-i18next'
 
 const contactus = () => {
+  const { t } = useTranslation()
+  const  { postData } = useAxios()
+
+  const formik = useFormik({
+    initialValues: {
+      email:"",
+      name:"",
+      description:""
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email address.').required('Emaill is required.'),
+      name: Yup.string().required('First name is required'),
+      description: Yup.string().required('Description is required!')
+    }),
+    onSubmit: (values) => {
+      postData(process.env.contactus,values)
+    }
+  })
+
+
   return (
     <section className="flex flex-col text-whiteloan h-auto">
       {/* this is blured header container */}
@@ -50,7 +74,7 @@ const contactus = () => {
                     />
                   </g>
                 </svg>
-                Home
+                {t('home')}
               </Link>
             </li>
             <li>
@@ -68,28 +92,25 @@ const contactus = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <a
-                  href="#"
+                <p
                   className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                 >
-                  contact
-                </a>
+                  {t('cuTitleP')}
+                </p>
               </div>
             </li>
           </ol>
         </nav>
-        <h1 className="text-[52px]">Contact Us</h1>
+        <h1 className="text-[52px]">{t('cuTitleP')}</h1>
       </section>
 
       {/* contact form */}
       {/* full width card one */}
       <section className=" container md:w-[80%] mx-auto flex flex-col md:flex-row text-whiteloan my-[100px] ">
         <div className="flex flex-col justify-center w-full">
-          <form className="flex flex-col gap-3">
+          <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3">
             <div className="flex flex-col items-start">
-              <p className="text-sm py-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing .
-              </p>
+              <p className="text-sm py-3">{t('cuSubtitlep')}</p>
             </div>
             <input
               id="name"
@@ -105,8 +126,11 @@ const contactus = () => {
                     py-2
                     focus:outline-none focus:border-blueloan
                     card-hover
+                    ${formik.touched.name && formik.errors.name && 'border-red-500'}
                   `}
-              placeholder="Your Name"
+              placeholder={t('cuNamePlaceholder')}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             <input
               id="email"
@@ -122,8 +146,11 @@ const contactus = () => {
                     py-2
                     focus:outline-none focus:border-blueloan
                     card-hover
+                    ${formik.touched.email && formik.errors.email && 'border-red-500'}
                   `}
-              placeholder="Email Address"
+              placeholder={t('cuEmailPlaceholder')}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
             <textarea
               className={`text-[14px] placeholder-gray-500
@@ -136,26 +163,30 @@ const contactus = () => {
                     py-2
                     focus:outline-none focus:border-blueloan
                     card-hover
+                    ${formik.touched.description && formik.errors.description && 'border-red-500'}
                   `}
-              name=""
-              id=""
+              name="description"
+              id="description"
               cols="30"
               rows="10"
+              placeholder={t('cuDescPlaceholder')}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             ></textarea>
             <button type="submit" className="neonBtn w-[162px] mx-auto">
-              Submit Form
+              {t('cuSubmitBtn')}
             </button>
           </form>
         </div>
         <div className=" relative hidden md:block  px-[100px] justify-center items-center">
           <h1 className=" text-2xl text-whiteloan font-bold">Contact Us</h1>
           <div className="mb-6">
-            <p>Email</p>
-            <a href="mailto:info@loaningo.com"> info [at] loaningo.com</a>
+            <p>{t('emailText')}</p>
+            <a href="mailto:info@loaningo.com">{t('emailAddress')}</a>
           </div>
           <div>
-            <p>Phone</p>
-            <a href="tel:">(+21) 12345678569</a>
+            <p>{t('phoneText')}</p>
+            <a href="tel:">{t('phoneNumber')}</a>
           </div>
         </div>
       </section>

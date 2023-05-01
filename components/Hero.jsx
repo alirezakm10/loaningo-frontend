@@ -32,7 +32,7 @@ const Hero = () => {
             type="button"
             className="neonBtn"
           >
-            {t('requestDemo')}
+            {t('requestDemoBtn')}
           </button>
           </Link>
           <Link href='/aboutus' >
@@ -40,7 +40,7 @@ const Hero = () => {
             type="button"
             className="baseBtn"
           >
-              {t('learnAbout')}
+              {t('learnAboutBtn')}
           </button>
           </Link>
         </div>

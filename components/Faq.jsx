@@ -3,9 +3,13 @@ import AccordionItem from "./AccordionItem";
 import { initialData } from "@/initialData";
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
 
 const Faq = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [filteredSearch, setFilteredSearch] = useState([])
+  const { t } = useTranslation()
   const router = useRouter()
   const [faqPage, setFaqPage] = useState(false)
   const [open, setOpen] = useState(false);
@@ -16,6 +20,11 @@ const Faq = () => {
     setOpen(true);
   };
   const { faq } = initialData;
+
+  const handleSearch = (e) => {
+    const test = [t('home'),t('requestDemoBtn')]
+    console.log(test)
+  };
 
   useEffect(() => {
     if(router.pathname.includes('/faq')){
@@ -39,30 +48,24 @@ const Faq = () => {
 <path fillRule="evenodd" clipRule="evenodd" d="M7.20801 1.9165C4.10634 1.9165 1.58301 4.464 1.58301 7.594C1.58301 11.5765 6.26967 15.4565 7.20801 15.6632C8.14634 15.4557 12.833 11.5757 12.833 7.594C12.833 4.464 10.3097 1.9165 7.20801 1.9165ZM7.20801 16.9165C5.71301 16.9165 0.333008 12.2898 0.333008 7.594C0.333008 3.774 3.41717 0.666504 7.20801 0.666504C10.9988 0.666504 14.083 3.774 14.083 7.594C14.083 12.2898 8.70301 16.9165 7.20801 16.9165Z" fill="#BDBDBD"/>
 </g>
 </svg>
-            Home
+            {t('home')}
           </Link>
         </li>
         <li>
           <div className="flex items-center">
             <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-            <a href="#" className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white">FAQ</a>
+            <p className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white">{t('faqTitle')}</p>
           </div>
         </li>
-        {/* <li aria-current="page">
-          <div className="flex items-center">
-            <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-            <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Flowbite</span>
-          </div>
-        </li> */}
       </ol>
     </nav>
       }
       <section className="flex flex-col h-auto gap-2 relative overflow-hidden items-center">
         {/* start of faq details */}
         <div className="flex flex-col items-center mb-[60px]">
-          <h1 className="text-[52px]">{faq.title}</h1>
+          <h1 className="text-[52px]">{t('faqTitle')}</h1>
           <p className="text-gray-500 pt-8 pb-4 text-center leading-8">
-            {faq.content}
+            {t('faqSubtitle')}
           </p>
           {/* below div is search input div */}
           { faqPage &&  
@@ -141,6 +144,7 @@ const Faq = () => {
               id="email"
               type="email"
               name="email"
+              value={searchTerm}
               className={`text-[14px] placeholder-gray-500
               bg-middarkloan
                     pl-10
@@ -153,7 +157,8 @@ const Faq = () => {
                     focus:outline-none focus:border-blueloan
                     card-hover
                   `}
-                  placeholder="Search .."
+                  placeholder={t('faqSearchPlaceholder')}
+                  onChange={handleSearch}
             />
           </div>}
         </div>
@@ -161,8 +166,21 @@ const Faq = () => {
 
         {/* start of accordions contariner */}
         <div className="">
-          {faq.accordionData.map((data, index) => {
-            return (
+          {
+               filteredSearch.length !==0 ?
+               
+               filteredSearch.map((data, index) => (
+                  <AccordionItem
+                    key={index}
+                    open={index === open}
+                    toggle={() => toggle(index)}
+                    question={data.question}
+                    answer={data.answer}
+                  />
+                )
+              )
+          :
+          faq.accordionData.map((data, index) => (
               <AccordionItem
                 key={index}
                 open={index === open}
@@ -170,16 +188,17 @@ const Faq = () => {
                 question={data.question}
                 answer={data.answer}
               />
-            );
-          })}
+            )
+          )
+          }
         </div>
         {/* end of accordions container */}
         { !faqPage && 
         <>
-        <p className="text-lg">Don’t find your answer ?</p>
+        <p className="text-lg">{t('faqUnderBox')}</p>
         <Link href='/faq' >
        <button className=" baseBtn mt-[25px] h-[45px] px-3   border border-white rounded-[4px] mx-auto">
-          See All Questions
+          {t('faqBtn')}
         </button>
         </Link>
         </>

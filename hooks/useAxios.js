@@ -23,9 +23,8 @@ import { useTranslation } from "react-i18next";
   });
 
   const config = {
-    "maxBodyLength":"infinity",
     headers: {
-      "Content-Type": "Application/json",
+      "Content-Type": "application/json",
     },
   };
 
@@ -44,6 +43,7 @@ import { useTranslation } from "react-i18next";
   }, [url]);
 
   const postData = async (url,values) => {
+    console.log('values of contactus is: ',values)
     try {
       const res = await axios.post(url,
         JSON.stringify(values),
@@ -56,7 +56,7 @@ import { useTranslation } from "react-i18next";
     } catch (err) {
       Toast.fire({
         icon: "error",
-        title: `${t(`${err.response.data.data.errorCode}`)}`,
+        title: `${t(`${err.response.data.errCode}`)}`,
       });
     } finally {
       setIsLoading(false);
@@ -72,8 +72,8 @@ import { useTranslation } from "react-i18next";
         last_name: values.last_name,
         occupation: values.occupation
       }
-    console.log('final data: ',JSON.stringify(finalData))
-      await axios.post(url, JSON.stringify(finalData), config)
+    console.log('final data: ',JSON.stringify(finalData),config)
+      const res = await axios.post(url, JSON.stringify(finalData), config)
       Toast.fire({
         icon: "success",
         title: `Submitted.`,

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { initialData } from "@/initialData";
+import { useTranslation } from 'react-i18next'
 
 const Navbar = () => {
+  const { t } = useTranslation()
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { logo, navbar, socialNetworks } = initialData;
 
@@ -17,7 +19,7 @@ const Navbar = () => {
           <div className="hidden lg:flex">
             <Link href="/requestdemo">
               <button type="button" className="neonBtn">
-                Request demo
+              {t('requestDemoBtn')}
               </button>
             </Link>
           </div>

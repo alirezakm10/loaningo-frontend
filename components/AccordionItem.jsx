@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
-
+import { useTranslation } from 'react-i18next'
 
 
 
 
 const AccordionItem = ({question, answer}) => {
+  const { t } = useTranslation()
+
   const minusIcon = '-'
 const plusIcon = '+'
   const [expanded, setExpanded] = useState(false)
@@ -13,7 +15,7 @@ const plusIcon = '+'
     <div className=" my-4 md:my-6 shadow-sm cursor-pointer rounded-lg bg-dimdarkloan " onClick={toggleExpanded}>
     <div className="px-6 text-whiteloan text-[17px] flex justify-between items-center h-20 select-none ">
       <h5 className="flex-2 w-full md:w-full">
-        {question}
+        {t(question)}
       </h5>
       <div>{expanded ? 
       <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +32,7 @@ const plusIcon = '+'
     </div>
     <div className={`px-6 break-all pt-0 overflow-hidden transition-[max-height] duration-500 ease-in ${expanded ? "max-h-auto" : "max-h-0"}`}>
       <p className="pb-4 text-left text-gray-500 leading-8 ">
-        {answer}
+        {t(answer)}
       </p>
     </div>
   </div>

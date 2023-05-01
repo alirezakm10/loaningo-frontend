@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
 const services = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="flex flex-col text-whiteloan h-auto">
       {/* this is blured header container */}
@@ -51,7 +54,7 @@ const services = () => {
                     />
                   </g>
                 </svg>
-                Home
+                {t('home')}
               </Link>
             </li>
             <li>
@@ -69,25 +72,21 @@ const services = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <a
-                  href="#"
+                <p
                   className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                 >
                   Services
-                </a>
+                </p>
               </div>
             </li>
           </ol>
         </nav>
-        <h1 className="text-3xl font-bold">Our Services</h1>
+        <h1 className="text-3xl font-bold">{t('srTitleP')}</h1>
       </section>
 
       <div className=" container mx-auto text-center flex flex-col gap-4 mb-[100px]">
-        <h1 className="text-3xl font-bold">Mission Statement</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <h1 className="text-3xl font-bold">{t('missionTitle')}</h1>
+        <p>{t('missionSubTitle')}</p>
       </div>
 
       {/* roadmap illustration start */}
@@ -109,28 +108,20 @@ const services = () => {
 
       <div className=" container mx-auto text-center flex flex-col gap-4 mt-[100px]">
         <h1 className="text-3xl font-bold">Services</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p>{t('srSubtitle')}</p>
       </div>
 
 {/* full width card one */}
       <section className=" container mx-auto flex flex-col-reverse md:flex-row text-whiteloan my-[50px] ">
         <div className="flex flex-col justify-center flex-1">
-          <h1 className="text-3xl">Loan</h1>
-          <p className="text-sm" >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <h1 className="text-3xl">{t('srCard1Title')}</h1>
+          <p className="text-sm" >{t('srCard1Content')}</p>
           <Link href='/requestdemo' >
           <button
             type="button"
             className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
           >
-            More about us
+            {t('moreAboutUsBtn')}
             <svg
               width="7"
               height="11"
@@ -158,19 +149,14 @@ const services = () => {
       {/* full width card two */}
       <section className=" container mx-auto flex flex-col-reverse md:flex-row text-whiteloan my-[50px]">
         <div className="flex flex-col justify-center flex-1">
-          <h1 className="text-3xl">Stake</h1>
-          <p className="text-sm" >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <h1 className="text-3xl">{t('srCard2Title')}</h1>
+          <p className="text-sm">{t('srCard2Content')}</p>
           <Link href='/requestdemo' >
           <button
             type="button"
             className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[100px] hover:text-blueloan hover:stroke-blueloan "
           >
-            More about us
+            {t('moreAboutUsBtn')}
             <svg
               width="7"
               height="11"
