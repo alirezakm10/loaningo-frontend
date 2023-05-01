@@ -51,6 +51,12 @@ p {
   box-shadow: none;
 }
 
+.isLoading { 
+  box-shadow: none !important;
+  background: rgba(128, 128, 128, 0.523) !important;
+  opacity: .6;
+}
+
 .under-neon-circle {
   background: #18bac01f;
   @apply relative  mx-auto flex justify-center items-center h-[112px] w-[112px] rounded-full

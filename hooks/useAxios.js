@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
  export const useAxios = (url) => {
   const { t } = useTranslation();
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
 
   // created style for toaseter
@@ -43,7 +43,7 @@ import { useTranslation } from "react-i18next";
   }, [url]);
 
   const postData = async (url,values) => {
-    console.log('values of contactus is: ',values)
+    setIsLoading(true)
     try {
       const res = await axios.post(url,
         JSON.stringify(values),
@@ -64,7 +64,7 @@ import { useTranslation } from "react-i18next";
   };
 
   const requestDemo = async (url, values) => {
-    console.log('request demo url: ',url)
+    setIsLoading(true)
     try {
       const finalData = {
         email: values.email,
@@ -72,14 +72,12 @@ import { useTranslation } from "react-i18next";
         last_name: values.last_name,
         occupation: values.occupation
       }
-    console.log('final data: ',JSON.stringify(finalData),config)
       const res = await axios.post(url, JSON.stringify(finalData), config)
       Toast.fire({
         icon: "success",
         title: `Submitted.`,
       });
     }catch(err){
-      console.log(err)
            Toast.fire({
         icon: "error",
         title: `${t(`${err.response.data.errCode}`)}`,

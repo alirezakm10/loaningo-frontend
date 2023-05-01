@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 
 const contactus = () => {
   const { t } = useTranslation()
-  const  { postData } = useAxios()
+  const  { isLoading,postData } = useAxios()
 
   const formik = useFormik({
     initialValues: {
@@ -173,7 +173,7 @@ const contactus = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             ></textarea>
-            <button type="submit" className="neonBtn w-[162px] mx-auto">
+            <button type="submit" className={`neonBtn w-[162px] mx-auto disabled:bg-gray-400 ${isLoading && 'isLoading'} `} disabled={isLoading} >
               {t('cuSubmitBtn')}
             </button>
           </form>

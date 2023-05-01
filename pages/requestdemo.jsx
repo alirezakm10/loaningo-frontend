@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 
 
 const requestdemo = () => {
-  const {requestDemo} = useAxios()
+  const {isLoading, requestDemo} = useAxios()
 const { t } = useTranslation()
 
   const formik = useFormik({
@@ -96,31 +96,24 @@ const { t } = useTranslation()
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <p
                     className="ml-1 text-sm font-medium text-gray-700 hover:text-blueloan md:ml-2 dark:text-gray-400 dark:hover:text-white"
                   >
                     Request demo
-                  </a>
+                  </p>
                 </div>
               </li>
             </ol>
           </nav>
-          <h1 className="text-3xl">Request Demo</h1>
-          <p>
-            If you're a sales or marketing professional, you might be searching
-            for an effective tool to collect demo requests from your leads and
-            website visitors. We might be a bit biased, but we believe that
-            Paperform might be a perfect solution. Want to know why? Check out
-            the form template
-          </p>
+          <h1 className="text-3xl">{t('rdTitleP')}</h1>
+          <p>{t('rdContentP')}</p>
           <div className="flex gap-7" >
           <Link href='/aboutus' >
           <button
             type="submit"
             className="border-none cursor-pointer stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
           >
-            Learn More
+            {t('learnMoreBtn')}
             <svg
               width="7"
               height="11"
@@ -143,7 +136,7 @@ const { t } = useTranslation()
             type="button"
             className="border-none stroke-white flex items-center justify-center gap-2 mt-[20px] mb-[50px] hover:text-blueloan hover:stroke-blueloan "
           >
-            Our Services
+            {t('ourServicesBtn')}
             <svg
               width="7"
               height="11"
@@ -169,7 +162,7 @@ const { t } = useTranslation()
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 ">
             <div className="flex flex-col items-start">
               <p className="text-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing .
+                {t('rdFormSupTitle')}
               </p>
             </div>
             <input
@@ -188,7 +181,7 @@ const { t } = useTranslation()
                     card-hover
                     ${formik.touched.email && formik.errors.email && 'border-red-500'}
                   `}
-              placeholder="Email Address"
+              placeholder={t('rdEmPlaceholder')}
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -211,7 +204,7 @@ const { t } = useTranslation()
                     card-hover
                     ${formik.touched.first_name && formik.errors.first_name && 'border-red-500'}
                   `}
-                placeholder="First Name"
+                placeholder={t('rdFnPlaceholder')}
                 value={formik.values.first_name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -232,7 +225,7 @@ const { t } = useTranslation()
                   card-hover
                   ${formik.touched.last_name && formik.errors.last_name && 'border-red-500'}
                 `}
-                placeholder="Last Name"
+                placeholder={t('rdLnPlaceholder')}
                 value={formik.values.last_name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -255,7 +248,7 @@ const { t } = useTranslation()
                     card-hover
                     ${formik.touched.occupation && formik.errors.occupation && 'border-red-500'}
                   `}
-              placeholder="Occupation"
+              placeholder={t('rdOcplaceholder')}
               value={formik.values.occupation}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -271,11 +264,11 @@ const { t } = useTranslation()
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
-              <p className={`${formik.touched.terms && formik.errors.terms && 'text-red-500'}`}>I agree with terms & condition</p>
+              <p className={`${formik.touched.terms && formik.errors.terms && 'text-red-500'}`}>{t('rdTermsText')}</p>
             </div>
 
-            <button type="submit" className="neonBtn w-[162px] mx-auto">
-              Submit Form
+            <button type="submit" className={`neonBtn w-[162px] mx-auto disabled:bg-gray-400 ${isLoading && 'isLoading'} `} disabled={isLoading} >
+              {t('submitFormBtn')}
             </button>
           </form>
         </div>
