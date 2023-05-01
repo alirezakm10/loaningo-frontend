@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Link from 'next/link'
-import useAxios from "@/hooks/useAxios";
+import { useAxios } from "@/hooks/useAxios";
+import { useTranslation } from ''
 
 
 const requestdemo = () => {
-  const {data, isLoading, isError, postData} = useAxios()
+  const {data, isLoading, isError, requestDemo} = useAxios()
   const formik = useFormik({
     initialValues: {
       email:"",
@@ -23,8 +24,7 @@ const requestdemo = () => {
       terms: Yup.array().required("Terms of service must be checked! "),
     }),
     onSubmit: (values) => {
-      console.log('this is url from requestdemo: ', process.env.requestdemo)
-      postData(process.env.requestdemo,values)
+      requestDemo(process.env.requestdemo,values)
     }
   })
   return (

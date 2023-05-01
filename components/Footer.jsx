@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { initialData } from "@/initialData";
+import { useTranslation } from 'react-i18next'
+
 
 const Footer = () => {
+  const { t } = useTranslation()
   const { logo, footer, socialNetworks } = initialData;
   return (
     <section className="w-full bg-middarkloan">
@@ -10,31 +13,31 @@ const Footer = () => {
       <section className="flex flex-col-reverse  items-center md:flex-row py-[100px] md:py-9 gap-3 md:gap-[100px]">
         {/* section one */}
         <div className="w-full flex flex-col items-center md:items-start text-center md:text-start gap-2">
-          <h1 className=" text-2xl font-bold">Contact Us</h1>
+          <h1 className=" text-2xl font-bold">{t('footerSec1Title')}</h1>
           <section className="flex gap-6 justify-between" >
           <div className="  flex flex-col leading-8">
               <p
                 className="hover:text-blueloan cursor-pointer"
               >
-               Email
+               {t('emailText')}
               </p>
               <a
               href="mailto:info@loaningo.com"
                 className="hover:text-blueloan cursor-pointer"
               >
-               info [at] loaningo.com
+               {t('emailAddress')}
               </a>
           </div>
           <div className="  flex flex-col leading-8">
               <p
                 className="hover:text-blueloan cursor-pointer"
               >
-               Phone
+               {t('phoneText')}
               </p>
               <p
                 className="hover:text-blueloan cursor-pointer"
               >
-               (+21)12345678569
+               {t('phoneNumber')}
               </p>
           </div>
           </section>
@@ -58,20 +61,20 @@ const Footer = () => {
 
         {/* section three */}
         <div className="w-full hidden md:flex flex-col">
-          <h1 className=" text-2xl font-bold">Fast Link</h1>
+          <h1 className=" text-2xl font-bold">{t('footerSec2Title')}</h1>
           <section className="flex gap-6 justify-between" >
           <div className="  flex flex-col leading-8">
               <Link
                 href='/'
                 className="hover:text-blueloan cursor-pointer"
               >
-               Home
+               {t('home')}
               </Link>
               <Link
                 href='/faq'
                 className="hover:text-blueloan cursor-pointer"
               >
-               FAQ
+               {t('faq')}
               </Link>
           </div>
           <div className="  flex flex-col leading-8">
@@ -79,13 +82,13 @@ const Footer = () => {
                 href='/aboutus'
                 className="hover:text-blueloan cursor-pointer"
               >
-               About Us
+               {t('aboutus')}
               </Link>
               <Link
                 href='/services'
                 className="hover:text-blueloan cursor-pointer"
               >
-               Services
+               {t('services')}
               </Link>
           </div>
           </section>

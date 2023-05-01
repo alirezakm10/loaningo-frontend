@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Swal from "sweetalert2";
+import { useTranslation } from "react-i18next";
 
+ export const useAxios = (url) => {
+  const { t } = useTranslation();
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(null);
 
-const useAxios = (url) => {
-    const [data, setData] = useState([])
-    const [isError, setIsError] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
-
-      // created style for toaseter
+  // created style for toaseter
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -21,35 +22,74 @@ const useAxios = (url) => {
     },
   });
 
-
-   const postData = async (url,values) => {
-    try {
-const config = {
+  const config = {
     headers: {
-        "Content-Type" : "application/json"
+      "Content-Type": "Application/json",
+    },
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(url);
+        setData(res.data);
+      } catch (err) {
+        setIsError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData(url);
+  }, [url]);
+
+  const postData = async (url,values) => {
+    try {
+      const res = await axios.post(url,
+        JSON.stringify(values),
+        config
+      );
+      Toast.fire({
+        icon: "success",
+        title: `Submitted.`,
+      });
+    } catch (err) {
+      Toast.fire({
+        icon: "error",
+        title: `${t(`${err.response.data.data.errorCode}`)}`,
+      });
+    } finally {
+      setIsLoading(false);
     }
-}
-const retrivedValues = JSON.stringify(values)
-console.log('stringed values from post method in post',values)
-console.log('also url is: ',url)
-const res = await axios.post(url,JSON.stringify(values), config)
-Toast.fire({
-    icon: "success",
-    title: `Sent Successfully!`,
-  });
+  };
+
+  const requestDemo = async (url, values) => {
+    console.log('request demo url: ',url)
+    try {
+      const finalData = {
+        email: values.email,
+        first_name: values.first_name,
+        last_name: values.last_name,
+        occupation: values.occupation
+      }
+    console.log('final data: ',JSON.stringify(finalData))
+      await axios.post(url, JSON.stringify(finalData), config)
+      Toast.fire({
+        icon: "success",
+        title: `Submitted.`,
+      });
     }catch(err){
-
-    }finally {
-        setIsLoading(false)
+      console.log(err)
+           Toast.fire({
+        icon: "error",
+        title: `${t(`${err.response.data.errCode}`)}`,
+      });
+    }finally{
+      setIsLoading(false)
     }
-   }
-    
-    return {
-        data,
-        isError,
-        isLoading,
-        postData
-    }
-}
+  }
 
-export default useAxios
+  return {data, isLoading, isError, postData, requestDemo }
+};
+
+
+

@@ -1,46 +1,45 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
+
 const Landing = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="flex flex-col items-center text-[14px]">
+
+
       {/* mission Segment start */}
       <section className=" container flex flex-col text-center text-whiteloan my-[60px]">
         <div className="flex flex-col gap-4 mb-[100px]">
           <h1 className="text-3xl font-bold">
-            Mission Statement
+           {t('missionTitle')}
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           {t('missionSubTitle')}
           </p>
         </div>
         {/* card container */}
         <div className="flex flex-col md:flex-row gap-[70px]">
           <div className='flex-1' >
-            <h1 >Ut enim ad minim</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod .
-            </p>
+            <h1 >{t('missionCard1')}</h1>
+            <p>{t('missionCard1body')}</p>
           </div>
           <div className='flex-1'>
-            <h1>Duis aute irure</h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sit
-              vitae, nemo amet enim et quibusdam temporibus. Odio, nisi velit.
-            </p>
+            <h1>{t('missionCard2')}</h1>
+            <p>{t('missionCard2body')}</p>
           </div>
           <div className='flex-1'>
-            <h1>Voluptate in this</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do .
-            </p>
+            <h1>{t('missionCard3')}</h1>
+            <p>{t('missionCard3body')}</p>
           </div>
         </div>
       </section>
       {/* mission Segment end */}
 
-      {/* how it works start */}
+
+
+      {/* how it works start*/}
       {/* below is whole container for css techniques */}
       <section className="relative flex flex-col items-center">
         {/* this section is line illustration container with absolute pos */}
@@ -64,58 +63,42 @@ const Landing = () => {
 
         <section className=" container flex flex-col text-center text-whiteloan my-[100px]">
           <div className="flex flex-col gap-4 my-8 mb-[100px]">
-            <h1 className="text-3xl text-whiteloan font-bold">How its Works</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <h1 className="text-3xl text-whiteloan font-bold">{t('hiwTitle')}</h1>
+            <p>{t('hiwSubtitle')}</p>
           </div>
           <div className="flex flex-col md:flex-row gap-[60px]">
             <div className="flex flex-col gap-6 relative md:top-[30px] flex-1">
               <div className="under-neon-circle">
-                <span className="neon-circle">01</span>
+                <span className="neon-circle">{t('hiwNumOne')}</span>
               </div>
-              <h1 className="my-0">Ut enim ad minim</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod .
-              </p>
+              <h1 className="my-0">{t('hiwTitleOne')}</h1>
+              <p>{t('hiwContentOne')}</p>
             </div>
             <div className="flex flex-col gap-6 flex-1">
               <div className="under-neon-circle">
-                <span className="neon-circle">02</span>
+                <span className="neon-circle">{t('hiwNumTwo')}</span>
               </div>
-              <h1 className="my-0">Duis aute irure</h1>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sit
-                vitae, nemo amet enim et quibusdam temporibus. Odio, nisi velit.
-              </p>
+              <h1 className="my-0">{t('hiwTitleTwo')}</h1>
+              <p>{t('hiwContentTwo')}</p>
             </div>
             <div className="flex flex-col gap-6 relative md:top-[30px] flex-1">
               <div className="under-neon-circle">
-                <span className="neon-circle">01</span>
+                <span className="neon-circle">{t('hiwNumThree')}</span>
               </div>
-              <h1 className="my-0">Voluptate in this</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                .
-              </p>
+              <h1 className="my-0">{t('hiwTitleThree')}</h1>
+              <p>{t('hiwContentThree')}</p>
             </div>
           </div>
         </section>
       </section>
+     {/* how it works end */}
 
       {/* why should choose us start */}
       <section className="container flex flex-col md:flex-row w-full text-whiteloan my-[100px]">
         <div className="flex flex-col justify-center flex-1">
-          <p className="text-blueloan text-lg">Why should choose us ?</p>
-          <h1 className=" text-3xl my-2">Our Advantages</h1>
-          <p className="  my-2 md:w-[90%]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <p className="text-blueloan text-lg">{t('advSuptitle')}</p>
+          <h1 className=" text-3xl my-2">{t('advTitle')}</h1>
+          <p className="  my-2 md:w-[90%]">{t('advContent')}</p>
         </div>
         <div className="flex w-full flex-col flex-1 justify-center items-center gap-[40px] py-[60px] rounded-[10px] bg-dimdarkloan">
           {/* card start */}
@@ -124,8 +107,8 @@ const Landing = () => {
             <Image src='/icons/shield.svg' priority width='30' height='30'  />
             </div>
             <div className="flex flex-col" >
-                <h1 className="text-lg my-0">Asset security</h1>
-                <p className="text-[12px]" >Ut enim ad minim nostrud exercitation</p>
+                <h1 className="text-lg my-0">{t('advCard1title')}</h1>
+                <p className="text-[12px]" >{t('advCard1body')}</p>
             </div>
           </section>
           {/* card end */}
@@ -134,8 +117,8 @@ const Landing = () => {
                 <Image src='/icons/speed.svg' responsive='true' width='30' height='30'  />
             </i>
             <div className="flex flex-col" >
-                <h1 className="text-lg my-0">Instant service</h1>
-                <p className="text-[12px]" >laboris nisi ut commodo consequat.</p>
+                <h1 className="text-lg my-0">{t('advCard2title')}</h1>
+                <p className="text-[12px]" >{t('advCard2body')}</p>
             </div>
           </section>
           <section className="flex gap-7 items-center w-[90%] md:w-[60%]">
@@ -143,8 +126,8 @@ const Landing = () => {
             <Image src='/icons/statistics.svg' responsive='true' width='30' height='30'  />
             </i>
             <div className="flex flex-col" >
-                <h1 className="text-lg my-0">Flexibility</h1>
-                <p className="text-[12px]" >Ut enim ad minim nostrud exercitation</p>
+                <h1 className="text-lg my-0">{t('advCard3title')}</h1>
+                <p className="text-[12px]" >{t('advCard3body')}</p>
             </div>
           </section>
           <section className="flex gap-7 items-center w-[90%] md:w-[60%]">
@@ -152,8 +135,8 @@ const Landing = () => {
             <Image src='/icons/paper.svg' responsive='true' width='30' height='30'  />
             </i>
             <div className="flex flex-col" >
-                <h1 className="text-lg my-0">Asset security</h1>
-                <p className="text-[12px]" >Ut enim eniam, quis nostrud exercitation</p>
+                <h1 className="text-lg my-0">{t('advCard4title')}</h1>
+                <p className="text-[12px]" >{t('advCard4body')}</p>
             </div>
           </section>
         </div>
@@ -161,17 +144,11 @@ const Landing = () => {
       {/* why should choose us end */}
 
 
-
       {/* Service summary start */}
       <section className=" container flex flex-col text-center text-whiteloan">
         <div className="flex flex-col gap-4 my-8 mb-[100px]">
-          <h1 className="text-4xl text-whiteloan font-bold">
-          Service Summary
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <h1 className="text-4xl text-whiteloan font-bold">{t('serviceTitle')}</h1>
+          <p>{t('serviceSubtitle')}</p>
         </div>
 
         <div className='flex flex-col md:flex-row gap-[40px]' >
@@ -179,21 +156,21 @@ const Landing = () => {
             <div className='h-[160px] p-3 gap-5 flex items-center flex1 bg-dimdarkloan rounded-[10px] text-whiteloan card-hover' >
             <Image src='/icons/loan.svg' priority width='50' height='50'  />
             <div className='flex flex-col text-left'>
-                <h1 className='text-lg font-bold my-0' >Loan</h1>
-                <p className='text-[12px]' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente id quos earum cupiditate amet voluptates?</p>
+                <h1 className='text-lg font-bold my-0' >{t('serviceCardOneTitle')}</h1>
+                <p className='text-[12px]' >{t('serviceCardOneContent')}</p>
             </div>
             </div>
             {/* card end */}
             <div className='h-[160px] p-3 gap-5 flex items-center flex1 bg-dimdarkloan rounded-[10px] text-whiteloan card-hover ' >
             <Image src='/icons/stake.svg' priority width='50' height='50'  />
             <div className='flex flex-col text-left ' >
-                <h1 className='text-lg font-bold my-0' >Stake</h1>
-                <p className='text-[12px]' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente id quos earum cupiditate amet voluptates?</p>
+                <h1 className='text-lg font-bold my-0' >{t('serviceCardTwoTitle')}</h1>
+                <p className='text-[12px]' >{t('serviceCardTwoContent')}</p>
             </div>
             </div>
         </div>
     <Link href='/services' >
-        <button className=" baseBtn mt-[45px] h-[45px] px-5   border border-white rounded-[4px] mx-auto" >Services Page</button>
+        <button className=" baseBtn mt-[45px] h-[45px] px-5   border border-white rounded-[4px] mx-auto" >{t('servcieBtn')}</button>
     </Link>
         </section>
       {/* Service summary end */}
