@@ -7,7 +7,8 @@ import { useTranslation } from ''
 
 
 const requestdemo = () => {
-  const {data, isLoading, isError, requestDemo} = useAxios()
+  const {requestDemo} = useAxios()
+  
   const formik = useFormik({
     initialValues: {
       email:"",
