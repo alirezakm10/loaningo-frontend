@@ -3,7 +3,7 @@ require('dotenv').config();
 const nextConfig = {
   output: 'standalone',
   env: {
-    requestdemo: 'https://loaningo.com/api/demo',
+    requestdemo: 'http://loaningo.com/api/demo',
     contactus: 'https://loaningo.com/api/contact'
   }
 }

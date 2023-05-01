@@ -23,6 +23,7 @@ import { useTranslation } from "react-i18next";
   });
 
   const config = {
+    "maxBodyLength":"infinity",
     headers: {
       "Content-Type": "Application/json",
     },
