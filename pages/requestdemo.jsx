@@ -3,12 +3,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Link from 'next/link'
 import { useAxios } from "@/hooks/useAxios";
-import { useTranslation } from ''
+import { useTranslation } from 'react-i18next'
 
 
 const requestdemo = () => {
   const {requestDemo} = useAxios()
-  
+const { t } = useTranslation()
+
   const formik = useFormik({
     initialValues: {
       email:"",
