@@ -228,7 +228,7 @@ console.log('f',filteredSearch)
 
         {/* start of accordions contariner */}
         <div className="">
-          {filteredSearch.length !== 0 ?
+          {filteredSearch.length !== 0  &&
           filteredSearch.map((data, index) => (
               <AccordionItem
                 key={index}
@@ -239,18 +239,29 @@ console.log('f',filteredSearch)
               />
             )
           )
-          :
-          data.map((data, index) => (
+}
+
+{ !router.pathname.includes('/faq') && data.map((data, index) => (
+         index < 4 &&  <AccordionItem
+              key={index}
+              open={index === open}
+              toggle={() => toggle(index)}
+              question={data.question}
+              answer={data.answer}            />
+          )
+        )
+         }
+          
+         { router.pathname.includes('/faq') && filteredSearch.length === 0 && data.map((data, index) => (
             <AccordionItem
               key={index}
               open={index === open}
               toggle={() => toggle(index)}
               question={data.question}
-              answer={data.answer}
-            />
+              answer={data.answer}            />
           )
         )
-          }
+         }
         </div>
         {/* end of accordions container */}
         {!faqPage && (

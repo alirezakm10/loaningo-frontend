@@ -24,7 +24,7 @@ const Cta = () => {
             type="button"
             className="neonBtn"
           >
-           {t('requestDemo')}
+           {t('requestDemoBtn')}
           </button>
           </Link>
           <Link href='/aboutus' >
@@ -32,7 +32,7 @@ const Cta = () => {
             type="button"
             className="baseBtn"
           >
-            {t('learnAbout')}
+            {t('learnAboutBtn')}
             <svg
               width="7"
               height="11"

@@ -52,7 +52,9 @@ const Hero = () => {
         <p className="text-blueloan" >{t('hero2suptitle')}</p>
         <h1 className=" text-3xl md:text-[52px] my-2 md:my-8" >{t('hero2title')}</h1>
         <p>{t("hero2content")}</p>
-        <button className="mt-[45px] mx-auto md:mx-0  w-[178px] baseBtn" >More about us</button>
+        <Link href='/aboutus' >
+        <button className="mt-[45px] mx-auto md:mx-0  w-[178px] baseBtn" >{t('moreAboutusBtn')}</button>
+        </Link>
         </div>
         <div className=" relative flex-1 w-full justify-center items-center">
           <img src='/earth.svg' width="100%" height="100%" className="px-6" />
