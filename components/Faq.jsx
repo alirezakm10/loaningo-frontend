@@ -22,7 +22,6 @@ const Faq = () => {
   const [...data] = initialData.faq.accordionData;
 
   const handleSearch = (e) => { 
-    console.log('test data: ', data)
     setSearchTerm(e.target.value)
     const filteredResults = data.filter(item => {
       const retrivedQuestion = t(item.question)
@@ -32,10 +31,8 @@ const Faq = () => {
    setFilteredSearch(filteredResults)
   }
  
-console.log('f',filteredSearch)
 
   useEffect(() => {
-    console.log("this is search", data);
     if (router.pathname.includes("/faq")) {
       setFaqPage(true);
     }
@@ -123,14 +120,14 @@ console.log('f',filteredSearch)
       )}
       <section className="flex flex-col h-auto gap-2 relative overflow-hidden items-center">
         {/* start of faq details */}
-        <div className="flex flex-col items-center mb-[60px]">
+        <div className="flex flex-col w-full items-center mb-[60px]">
           <h1 className="text-[52px]">{t("faqTitle")}</h1>
           <p className="text-gray-500 pt-8 pb-4 text-center leading-8">
             {t("faqSubtitle")}
           </p>
           {/* below div is search input div */}
           {faqPage && (
-            <div className="relative w-[90%] md:w-[60%] mt-[60px]">
+            <div className="relative w-full md:w-[60%] mt-[60px]">
               <div
                 className="
                     inline-flex
@@ -202,9 +199,7 @@ console.log('f',filteredSearch)
                 </svg>
               </div>
               <input
-                id="email"
-                type="email"
-                name="email"
+                type="text"
                 value={searchTerm}
                 className={`text-[14px] placeholder-gray-500
               bg-middarkloan
