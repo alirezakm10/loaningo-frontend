@@ -85,8 +85,8 @@ const services = () => {
       </section>
 
       <div className=" container mx-auto text-center flex flex-col gap-4 mb-[100px]">
-        <h1 className="text-3xl font-bold">{t('missionTitle')}</h1>
-        <p>{t('missionSubTitle')}</p>
+        <h1 className="text-3xl font-bold">{t('RoadMapTitleP')}</h1>
+        <p>{t('RoadMapSubtitle')}</p>
       </div>
 
       {/* roadmap illustration start */}
