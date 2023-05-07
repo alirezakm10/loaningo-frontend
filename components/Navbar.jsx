@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="md:order-2">
           {/* this button is for desktop */}
           <div className="hidden lg:flex">
-            <Link href="/requestdemo">
+            <Link onClick={() => setIsNavOpen(false)} href="/requestdemo">
               <button type="button" className="neonBtn">
               {t('requestDemoBtn')}
               </button>
@@ -91,9 +91,9 @@ const Navbar = () => {
               </ul>
               {/* login signup buttons in mobile menu */}
 
-              <Link href="/requestdemo">
+              <Link onClick={() => setIsNavOpen(false)} href="/requestdemo">
                 <button type="button" className="neonBtn mt-[100px] w-full">
-                  Request demo
+              {t('requestDemoBtn')}
                 </button>
               </Link>
 
