@@ -91,7 +91,8 @@ const about = () => {
       </section>
 
       {/* full width card one */}
-      <section className=" container mx-auto flex flex-col md:flex-row text-whiteloan">
+      <section className=" container mx-auto flex flex-col  text-whiteloan">
+        <div className="flex flex-col md:flex-row" >
         <div className=" relative flex-1 w-full justify-center items-center">
           <img src="/aboutus.svg" width="100%" height="100%" className="relative top-[100px] px-6" />
         </div>
@@ -108,7 +109,89 @@ const about = () => {
               {t('auContent2P')}
             </p>
           </section>
+      
         </div>
+        </div>
+        
+        {/* team information component */}
+        <section className="flex flex-col gap-3">
+        <div className="flex flex-col items-center mt-[70px] mb-[40px]">
+          <h1 className="text-3xl">{t('auHead3p')}</h1>
+          <p className=" text-sm text-center text-darkgot leading-8">
+          {t('auContent3p')}
+        </p>
+        </div>
+        <section className="w-full flex flex-col gap-[70px] md:flex-row justify-center items-center md:my-9">
+          {/* card start */}
+          <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/sajjad_karami.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC1Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC1Stack')}</p>
+          </section>
+          {/* card end */}
+           {/* card start */}
+           <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/hadi_khaleghi.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC2Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC2Stack')}</p>
+          </section>
+          {/* card end */}
+           {/* card start */}
+           <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/ali_naghie.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC3Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC3Stack')}</p>
+          </section>
+          {/* card end */}
+        </section>
+        <section className="w-full flex flex-col gap-[70px] md:flex-row justify-center items-center md:my-9">
+          {/* card start */}
+          <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/armeti_rahmani.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC4Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC4Stack')}</p>
+          </section>
+          {/* card end */}
+           {/* card start */}
+           <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/alireza_karbalayi.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC5Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC5Stack')}</p>
+          </section>
+          {/* card end */}
+           {/* card start */}
+           <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/morteza_ahmadi.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC6Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC6Stack')}</p>
+          </section>
+          {/* card end */}
+        </section>
+        <section className="flex flex-col gap-[70px] md:flex-row justify-center items-center md:my-9">
+          {/* card start */}
+          <section className=" relative flex flex-col justify-center items-center gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md  max-w-[300px] h-auto team-img">
+              <img src="/team/yana_foomani.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC7Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC7Stack')}</p>
+          </section>
+          {/* card end */}
+        </section>
+      </section>
+
       </section>
     </section>
   );
