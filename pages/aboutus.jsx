@@ -163,7 +163,7 @@ const about = () => {
            {/* card start */}
            <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
             <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
-              <img src="/team/alireza_karbalayi.jpg" width="100%" height="100%" />
+              <img src="/team/ali_qadimi.jpg" width="100%" height="100%" />
             </div>
             <h1 className="text-2xl">{t('teamC5Title')}</h1>
             <p className="text-sm text-dimgot pb-2 ">{t('teamC5Stack')}</p>
@@ -172,24 +172,37 @@ const about = () => {
            {/* card start */}
            <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
             <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
-              <img src="/team/morteza_ahmadi.jpg" width="100%" height="100%" />
+              <img src="/team/alireza_karbalayi.jpg" width="100%" height="100%" />
             </div>
             <h1 className="text-2xl">{t('teamC6Title')}</h1>
             <p className="text-sm text-dimgot pb-2 ">{t('teamC6Stack')}</p>
           </section>
           {/* card end */}
         </section>
-        <section className="flex flex-col gap-[70px] md:flex-row justify-center items-center md:my-9">
+
+
+        <section className="w-full flex flex-col gap-[70px] md:flex-row justify-center items-center md:my-9">
           {/* card start */}
-          <section className=" relative flex flex-col justify-center items-center gap-3 text-center items-center flex-1 team-card">
-            <div className="relative overflow-hidden rounded-md  max-w-[300px] h-auto team-img">
-              <img src="/team/yana_foomani.jpg" width="100%" height="100%" />
+          <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/morteza_ahmadi.jpg" width="100%" height="100%" />
             </div>
             <h1 className="text-2xl">{t('teamC7Title')}</h1>
             <p className="text-sm text-dimgot pb-2 ">{t('teamC7Stack')}</p>
           </section>
           {/* card end */}
+           {/* card start */}
+           <section className=" relative flex flex-col gap-3 text-center items-center flex-1 team-card">
+            <div className="relative overflow-hidden rounded-md max-w-[300px]  h-auto team-img">
+              <img src="/team/yana_foomani.jpg" width="100%" height="100%" />
+            </div>
+            <h1 className="text-2xl">{t('teamC8Title')}</h1>
+            <p className="text-sm text-dimgot pb-2 ">{t('teamC8Stack')}</p>
+          </section>
+          {/* card end */}
+    
         </section>
+
       </section>
 
       </section>
